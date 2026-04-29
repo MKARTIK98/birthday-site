@@ -75,6 +75,7 @@
       user-select: none;
       -webkit-tap-highlight-color: transparent;
       font-weight: 600;
+      margin: 8px;
     }
 
     button:active {
@@ -84,6 +85,14 @@
     button:hover {
       transform: translateY(-3px) scale(1.05);
       box-shadow: 0 10px 25px rgba(255,77,109,0.5);
+    }
+
+    .music-btn {
+      background: linear-gradient(45deg, #667eea, #764ba2);
+    }
+
+    .music-btn:hover {
+      box-shadow: 0 10px 25px rgba(102,126,234,0.5);
     }
 
     @media (max-width: 600px) {
@@ -110,6 +119,13 @@
     .show {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    .song-title {
+      color: #667eea;
+      font-weight: 600;
+      margin: 15px 0 10px 0;
+      font-size: clamp(0.95rem, 3vw, 1.05rem);
     }
 
     @keyframes fadeIn {
@@ -188,20 +204,39 @@
       <br><br>
       Goa nahi aa paaya, I know I missed bahut kuch. Missing you bahut zyaada. Khayal rakho apna.
       <br><br>
-      /add song here/
+      
+      <div class="song-title">🎵 Special Song for You 🎵</div>
+      <button class="music-btn" onclick="playMusic()">Play "Maula Mere" 🎶</button>
+      
+      <br><br>
       <strong>Happy Birthday once again 🎉</strong>
       Aapka <strong>Kartik</strong>
       <br><br>
-      
     </div>
 
-    <div class="footer"> with good vibes ✨</div>
+    <div class="footer">with good vibes ✨</div>
   </div>
+
+  <!-- Hidden Audio Player -->
+  <audio id="audioPlayer" style="display: none;">
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  </audio>
 
   <!-- Sparkles -->
   <script>
     function reveal() {
       document.getElementById('msg').classList.add('show');
+    }
+
+    function playMusic() {
+      const audio = document.getElementById('audioPlayer');
+      if (audio.paused) {
+        audio.play();
+        event.target.textContent = '⏸️ Pause Music';
+      } else {
+        audio.pause();
+        event.target.textContent = '▶️ Play "Maula Mere"';
+      }
     }
 
     for (let i = 0; i < 25; i++) {
