@@ -191,26 +191,23 @@
 <body>
 
   <div class="container">
-    <h1>Happy Birthday Chandni 🌙 🎂</h1>
+    <h1>Happy Birthday Preethi ❤️ 🎂</h1>
     <h2>Wishing you a day filled with <span class="highlight">smiles</span>, <span class="highlight">laughter</span>, and just a little bit of magic ✨</h2>
 
     <button onclick="reveal()">Open Surprise 🎁</button>
 
     <div id="msg" class="message">
-      Hello Preethi ji 😊<br><br>
-      You're genuinely one of those people who make everything feel lighter and better just by being around.
+      Every moment with you feels special, every smile of yours makes my day better.
       <br><br>
-      I hope this year brings you everything you've been working for — and a few beautiful surprises along the way.
-      <br><br>
-      Goa nahi aa paaya, I know I missed bahut kuch. Missing you bahut zyaada. Khayal rakho apna.
+      I'm really lucky to have you in my life. I hope this year brings you as much happiness
+      as you bring into mine.
       <br><br>
       
       <div class="song-title">🎵 Special Song for You 🎵</div>
-      <button class="music-btn" onclick="playMusic()">Play "Maula Mere" 🎶</button>
+      <button class="music-btn" onclick="toggleMusic()">▶️ Play "Maula Mere" 🎶</button>
       
       <br><br>
-      <strong>Happy Birthday once again 🎉</strong>
-      Aapka <strong>Kartik</strong>
+      <strong>Happy Birthday ❤️ Always yours</strong>
       <br><br>
     </div>
 
@@ -218,24 +215,30 @@
   </div>
 
   <!-- Hidden Audio Player -->
-  <audio id="audioPlayer" style="display: none;">
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  <audio id="audioPlayer">
+    <source src="https://raw.githubusercontent.com/MKARTIK98/birthday-site/main/Maula%20Mere%20Maula%20_%20Updated.m4a" type="audio/mp4">
   </audio>
 
   <!-- Sparkles -->
   <script>
+    let isPlaying = false;
+
     function reveal() {
       document.getElementById('msg').classList.add('show');
     }
 
-    function playMusic() {
+    function toggleMusic() {
       const audio = document.getElementById('audioPlayer');
-      if (audio.paused) {
-        audio.play();
-        event.target.textContent = '⏸️ Pause Music';
-      } else {
+      const btn = event.target;
+      
+      if (isPlaying) {
         audio.pause();
-        event.target.textContent = '▶️ Play "Maula Mere"';
+        btn.textContent = '▶️ Play "Maula Mere" 🎶';
+        isPlaying = false;
+      } else {
+        audio.play();
+        btn.textContent = '⏸️ Pause Music';
+        isPlaying = true;
       }
     }
 
