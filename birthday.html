@@ -2,154 +2,150 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Happy Birthday ❤️</title>
+  <title>Happy Birthday Preethi 🎉</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Pacifico&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      background: linear-gradient(135deg, #1a1a2e, #3a0ca3, #7209b7);
-      color: white;
       font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top, #2b2d42, #0f172a);
+      color: #fff;
+      height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100vh;
       overflow: hidden;
     }
 
     .container {
       text-align: center;
-      animation: fadeIn 2s ease-in-out;
-      padding: 20px;
-      z-index: 10;
-      position: relative;
+      max-width: 500px;
+      padding: 30px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,0.05);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+      animation: fadeIn 1.5s ease;
     }
 
     h1 {
+      font-family: 'Pacifico', cursive;
       font-size: 3rem;
-      font-family: 'Great Vibes', cursive;
-      margin-bottom: 15px;
-      color: #ffccd5;
+      margin-bottom: 10px;
+      color: #ff8fab;
     }
 
     h2 {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-weight: 300;
       margin-bottom: 25px;
-      color: #f1f1f1;
+      color: #e2e8f0;
+    }
+
+    .highlight {
+      color: #ffd166;
+      font-weight: 600;
     }
 
     button {
-      padding: 15px 30px;
+      padding: 12px 28px;
       font-size: 1rem;
       border: none;
-      border-radius: 25px;
-      background: #ff4d6d;
+      border-radius: 30px;
+      background: linear-gradient(45deg, #ff4d6d, #ff8fab);
       color: white;
       cursor: pointer;
       transition: all 0.3s ease;
-      touch-action: manipulation;
-      -webkit-user-select: none;
-      user-select: none;
     }
 
-    button:hover,
-    button:active {
-      transform: scale(1.1);
-      box-shadow: 0 0 20px #ff4d6d;
+    button:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 10px 25px rgba(255,77,109,0.5);
     }
 
-    button:active {
-      transform: scale(0.95);
-    }
-
-    .hidden-message {
-      margin-top: 20px;
-      font-size: 1.2rem;
-      opacity: 0;
-      transition: opacity 1.5s ease;
-      max-width: 400px;
-      margin-left: auto;
-      margin-right: auto;
+    .message {
+      margin-top: 25px;
+      font-size: 1.1rem;
       line-height: 1.6;
-      color: #ffe5ec;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.8s ease;
+      color: #f8fafc;
     }
 
-    .show { opacity: 1; }
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    .hearts {
+    /* Floating sparkles */
+    .sparkle {
       position: absolute;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      top: 0;
-      left: 0;
-    }
-
-    .heart {
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background: #ff4d6d;
-      transform: rotate(45deg);
-      animation: floatUp 6s infinite ease-in;
-    }
-
-    .heart::before,
-    .heart::after {
-      content: '';
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background: #ff4d6d;
+      width: 6px;
+      height: 6px;
+      background: white;
       border-radius: 50%;
+      opacity: 0.8;
+      animation: float 6s linear infinite;
     }
 
-    .heart::before { top: -10px; left: 0; }
-    .heart::after { left: -10px; top: 0; }
+    @keyframes float {
+      0% { transform: translateY(100vh); opacity: 0; }
+      10% { opacity: 1; }
+      100% { transform: translateY(-10vh); opacity: 0; }
+    }
 
-    @keyframes floatUp {
-      0% { transform: translateY(100vh) rotate(45deg); opacity: 1; }
-      100% { transform: translateY(-10vh) rotate(45deg); opacity: 0; }
+    .footer {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #94a3b8;
     }
   </style>
 </head>
 <body>
-  <div class="hearts">
-    <div class="heart" style="left:10%; animation-delay:0s;"></div>
-    <div class="heart" style="left:30%; animation-delay:1s;"></div>
-    <div class="heart" style="left:50%; animation-delay:2s;"></div>
-    <div class="heart" style="left:70%; animation-delay:3s;"></div>
-    <div class="heart" style="left:90%; animation-delay:4s;"></div>
-  </div>
 
   <div class="container">
-    <h1>Happy Birthday, My Favorite Person ❤️</h1>
-    <h2>On this special day, I just want you to know how much you mean to me.</h2>
-    <button onclick="showMessage()">Open My Heart 💌</button>
+    <h1>Happy Birthday Preethi 🎂</h1>
+    <h2>Wishing you a day filled with <span class="highlight">smiles</span>, <span class="highlight">laughter</span>, and just a little bit of magic ✨</h2>
 
-    <div id="message" class="hidden-message">
-      Every moment with you feels special, every smile of yours makes my day better.
+    <button onclick="reveal()">Open Surprise 🎁</button>
+
+    <div id="msg" class="message">
+      Hey Preethi 😊<br><br>
+      You’re genuinely one of those people who make everything feel lighter and better just by being around.
       <br><br>
-      I'm really lucky to have you in my life. I hope this year brings you as much happiness
-      as you bring into mine.
+      I hope this year brings you everything you’ve been working for — and a few beautiful surprises along the way.
       <br><br>
-      Happy Birthday ❤️ Always yours.
+      Stay awesome, keep smiling… and maybe save one smile for me 😉
+      <br><br>
+      <strong>Happy Birthday once again 🎉</strong>
     </div>
+
+    <div class="footer">Made with good vibes ✨</div>
   </div>
 
+  <!-- Sparkles -->
   <script>
-    function showMessage() {
-      var messageEl = document.getElementById('message');
-      messageEl.classList.add('show');
+    function reveal() {
+      document.getElementById('msg').classList.add('show');
+    }
+
+    for (let i = 0; i < 30; i++) {
+      const s = document.createElement('div');
+      s.className = 'sparkle';
+      s.style.left = Math.random() * 100 + 'vw';
+      s.style.animationDuration = (4 + Math.random() * 4) + 's';
+      s.style.opacity = Math.random();
+      document.body.appendChild(s);
     }
   </script>
+
 </body>
 </html>
