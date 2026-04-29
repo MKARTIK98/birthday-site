@@ -23,6 +23,8 @@
       text-align: center;
       animation: fadeIn 2s ease-in-out;
       padding: 20px;
+      z-index: 10;
+      position: relative;
     }
 
     h1 {
@@ -40,7 +42,7 @@
     }
 
     button {
-      padding: 12px 25px;
+      padding: 15px 30px;
       font-size: 1rem;
       border: none;
       border-radius: 25px;
@@ -48,11 +50,19 @@
       color: white;
       cursor: pointer;
       transition: all 0.3s ease;
+      touch-action: manipulation;
+      -webkit-user-select: none;
+      user-select: none;
     }
 
-    button:hover {
+    button:hover,
+    button:active {
       transform: scale(1.1);
       box-shadow: 0 0 20px #ff4d6d;
+    }
+
+    button:active {
+      transform: scale(0.95);
     }
 
     .hidden-message {
@@ -112,6 +122,14 @@
   </style>
 </head>
 <body>
+  <div class="hearts">
+    <div class="heart" style="left:10%; animation-delay:0s;"></div>
+    <div class="heart" style="left:30%; animation-delay:1s;"></div>
+    <div class="heart" style="left:50%; animation-delay:2s;"></div>
+    <div class="heart" style="left:70%; animation-delay:3s;"></div>
+    <div class="heart" style="left:90%; animation-delay:4s;"></div>
+  </div>
+
   <div class="container">
     <h1>Happy Birthday, My Favorite Person ❤️</h1>
     <h2>On this special day, I just want you to know how much you mean to me.</h2>
@@ -123,21 +141,14 @@
       I'm really lucky to have you in my life. I hope this year brings you as much happiness
       as you bring into mine.
       <br><br>
-      Happy Birthday Preethi.
+      Happy Birthday ❤️ Always yours.
     </div>
-  </div>
-
-  <div class="hearts">
-    <div class="heart" style="left:10%; animation-delay:0s;"></div>
-    <div class="heart" style="left:30%; animation-delay:1s;"></div>
-    <div class="heart" style="left:50%; animation-delay:2s;"></div>
-    <div class="heart" style="left:70%; animation-delay:3s;"></div>
-    <div class="heart" style="left:90%; animation-delay:4s;"></div>
   </div>
 
   <script>
     function showMessage() {
-      document.getElementById('message').classList.add('show');
+      var messageEl = document.getElementById('message');
+      messageEl.classList.add('show');
     }
   </script>
 </body>
